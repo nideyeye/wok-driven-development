@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>炒锅驱动开发 · 菜谱目录</title>
+<style>
+  :root {
+    --paper: #FBF8F2;
+    --ink: #2E2A24;
+    --ink-soft: #6E675C;
+    --line: #D8D0C2;
+    --accent: #C77B2F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px; background: #EDE7DB;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+                 sans-serif;
+    color: var(--ink);
+  }
+  .card {
+    max-width: 720px; margin: 0 auto; background: var(--paper);
+    border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(60, 45, 20, .12);
+    padding: 28px 30px 20px;
+  }
+  h1 { font-size: 24px; font-weight: 800; margin: 0 0 4px; letter-spacing: .5px; }
+  .subtitle { font-size: 14px; color: var(--ink-soft); margin-bottom: 20px; }
+  ul.recipes { list-style: none; margin: 0; padding: 0; }
+  ul.recipes li { border-top: 1px solid var(--line); }
+  ul.recipes a {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px; padding: 14px 6px; text-decoration: none; color: var(--ink);
+    border-radius: 8px; transition: background .15s;
+  }
+  ul.recipes a:hover { background: #F4EEE2; }
+  .dish { font-size: 17px; font-weight: 700; }
+  .dish-sub { font-size: 12.5px; color: var(--ink-soft); }
+  .arrow { color: var(--accent); font-weight: 700; }
+  .footer {
+    margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: 11.5px; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>炒锅驱动开发</h1>
+  <div class="subtitle">Wok-Driven Development · 工程师菜谱卡片合集</div>
+  <ul class="recipes">
+    <li><a href="recipes/酸辣大白菜/"><span><span class="dish">酸辣大白菜</span> <span class="dish-sub">美食作家王刚 · 家常版</span></span><span class="arrow">→</span></a></li>
+    <li><a href="recipes/丝瓜炒鸡蛋/"><span><span class="dish">丝瓜炒鸡蛋</span> <span class="dish-sub">饭店做法 · 不出水不发黑</span></span><span class="arrow">→</span></a></li>
+  </ul>
+  <div class="footer">⚙ 工程师菜谱格式 · 源自 Cooking for Engineers（Michael Chu，2004）</div>
+</div>
+</body>
+</html>
