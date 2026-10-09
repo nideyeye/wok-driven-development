@@ -125,32 +125,8 @@
   <div class="footer">⚙ 工程师菜谱格式 · 源自 Cooking for Engineers（Michael Chu，2004）</div>
 </div>
 
+<script src="recipes-index.js"></script>
 <script>
-// 菜谱索引：新增菜谱时在此追加一条（path 为相对本页的目录）
-const RECIPES = [
-  {
-    path: "recipes/酸辣大白菜/",
-    title: "酸辣大白菜",
-    subtitle: "美食作家王刚 · 家常版",
-    ingredients: [
-      "植物油 适量（可稍多）", "大蒜 5 瓣（拍散剁末）", "干辣椒 4 个（剪成小节）",
-      "大白菜 1 颗（斜刀切片，帮叶分开，先下帮后下叶）", "青椒 半个（切片，配色）",
-      "红椒 半个（切片，配色）", "食用盐 1 勺（提前调成料汁）", "生抽酱油 3 克（提前调成料汁）",
-      "香醋 3 克（提前调成料汁）", "水淀粉 适量（提前调成料汁）", "明油 适量"
-    ]
-  },
-  {
-    path: "recipes/丝瓜炒鸡蛋/",
-    title: "丝瓜炒鸡蛋",
-    subtitle: "饭店做法 · 不出水不发黑",
-    ingredients: [
-      "丝瓜 2 根", "鸡蛋 3 个", "大蒜 3~4 瓣", "小米辣 2~3 个（可选）",
-      "清水 半锅", "食盐 1 勺", "色拉油 1 勺", "食用油 适量（宽油）",
-      "鸡精 半勺", "生抽 小半勺"
-    ]
-  }
-];
-
 const PAGE_SIZE = 10;          // 每页菜数
 let mode = "all";              // "all" = 全部匹配(AND) | "any" = 任一匹配(OR)
 let page = 1;
