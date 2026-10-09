@@ -10,6 +10,7 @@
     --ink: #2E2A24;
     --ink-soft: #6E675C;
     --line: #D8D0C2;
+    --line-strong: #A89E8C;
     --accent: #C77B2F;
   }
   * { box-sizing: border-box; }
@@ -27,8 +28,31 @@
     padding: 28px 30px 20px;
   }
   h1 { font-size: 24px; font-weight: 800; margin: 0 0 4px; letter-spacing: .5px; }
-  .subtitle { font-size: 14px; color: var(--ink-soft); margin-bottom: 20px; }
-  ul.recipes { list-style: none; margin: 0; padding: 0; }
+  .subtitle { font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
+
+  /* 搜索区 */
+  .search-box {
+    border: 1px solid var(--line-strong); border-radius: 10px;
+    background: #FFF; padding: 12px 14px; margin-bottom: 8px;
+  }
+  .search-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .search-input {
+    flex: 1; min-width: 200px; border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 12px; font-size: 14px;
+    font-family: inherit; color: var(--ink); outline: none;
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .mode-group { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .mode-btn {
+    border: none; background: #FFF; padding: 8px 14px; font-size: 13px;
+    cursor: pointer; color: var(--ink-soft); font-family: inherit;
+  }
+  .mode-btn.active { background: var(--accent); color: #FFF; font-weight: 700; }
+  .search-hint { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+  .search-hint b { color: var(--accent); }
+
+  /* 结果列表 */
+  ul.recipes { list-style: none; margin: 16px 0 0; padding: 0; }
   ul.recipes li { border-top: 1px solid var(--line); }
   ul.recipes a {
     display: flex; align-items: baseline; justify-content: space-between;
@@ -38,10 +62,38 @@
   ul.recipes a:hover { background: #F4EEE2; }
   .dish { font-size: 17px; font-weight: 700; }
   .dish-sub { font-size: 12.5px; color: var(--ink-soft); }
+  .ings { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  mark { background: #FDEBD5; color: var(--accent); border-radius: 3px; padding: 0 2px; }
   .arrow { color: var(--accent); font-weight: 700; }
+  .empty {
+    padding: 32px 0; text-align: center; font-size: 14px;
+    color: var(--ink-soft); border-top: 1px solid var(--line);
+  }
+
+  /* 分页 */
+  .pager {
+    display: flex; align-items: center; justify-content: center;
+    gap: 6px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .page-info { font-size: 12px; color: var(--ink-soft); margin-top: 8px; text-align: center; }
+  .pg-btn {
+    border: 1px solid var(--line); background: #FFF; color: var(--ink);
+    border-radius: 8px; min-width: 34px; height: 34px; padding: 0 10px;
+    font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+  .pg-btn:hover:not(:disabled):not(.active) { border-color: var(--accent); color: var(--accent); }
+  .pg-btn.active { background: var(--accent); border-color: var(--accent); color: #FFF; font-weight: 700; }
+  .pg-btn:disabled { opacity: .4; cursor: default; }
+  .pg-ellipsis { color: var(--ink-soft); padding: 0 2px; }
+
   .footer {
     margin-top: 18px; padding-top: 12px; border-top: 1px dashed var(--line);
     font-size: 11.5px; color: var(--ink-soft);
+  }
+  @media (max-width: 560px) {
+    body { padding: 16px 8px; }
+    .card { padding: 18px 14px 14px; }
+    h1 { font-size: 21px; }
   }
 </style>
 </head>
@@ -49,11 +101,163 @@
 <div class="card">
   <h1>炒锅驱动开发</h1>
   <div class="subtitle">Wok-Driven Development · 工程师菜谱卡片合集</div>
-  <ul class="recipes">
-    <li><a href="recipes/酸辣大白菜/"><span><span class="dish">酸辣大白菜</span> <span class="dish-sub">美食作家王刚 · 家常版</span></span><span class="arrow">→</span></a></li>
-    <li><a href="recipes/丝瓜炒鸡蛋/"><span><span class="dish">丝瓜炒鸡蛋</span> <span class="dish-sub">饭店做法 · 不出水不发黑</span></span><span class="arrow">→</span></a></li>
-  </ul>
+
+  <div class="search-box">
+    <div class="search-row">
+      <input class="search-input" id="q" type="search"
+             placeholder="输入关键词，空格分隔，可搜菜名或配料，如：蒜 白菜" />
+      <div class="mode-group" role="group" aria-label="匹配模式">
+        <button class="mode-btn active" id="mode-all" type="button">全部匹配</button>
+        <button class="mode-btn" id="mode-any" type="button">任一匹配</button>
+      </div>
+    </div>
+    <div class="search-hint">
+      多个关键词用<b>空格</b>分隔；<b>全部匹配</b>=所有关键词都要命中，<b>任一匹配</b>=命中任意一个即显示。搜索范围：菜名 + 配料。
+    </div>
+  </div>
+
+  <ul class="recipes" id="list"></ul>
+  <div class="empty" id="empty" style="display:none">没有匹配的菜谱，换个关键词试试</div>
+
+  <div class="pager" id="pager"></div>
+  <div class="page-info" id="pageInfo"></div>
+
   <div class="footer">⚙ 工程师菜谱格式 · 源自 Cooking for Engineers（Michael Chu，2004）</div>
 </div>
+
+<script>
+// 菜谱索引：新增菜谱时在此追加一条（path 为相对本页的目录）
+const RECIPES = [
+  {
+    path: "recipes/酸辣大白菜/",
+    title: "酸辣大白菜",
+    subtitle: "美食作家王刚 · 家常版",
+    ingredients: [
+      "植物油 适量（可稍多）", "大蒜 5 瓣（拍散剁末）", "干辣椒 4 个（剪成小节）",
+      "大白菜 1 颗（斜刀切片，帮叶分开，先下帮后下叶）", "青椒 半个（切片，配色）",
+      "红椒 半个（切片，配色）", "食用盐 1 勺（提前调成料汁）", "生抽酱油 3 克（提前调成料汁）",
+      "香醋 3 克（提前调成料汁）", "水淀粉 适量（提前调成料汁）", "明油 适量"
+    ]
+  },
+  {
+    path: "recipes/丝瓜炒鸡蛋/",
+    title: "丝瓜炒鸡蛋",
+    subtitle: "饭店做法 · 不出水不发黑",
+    ingredients: [
+      "丝瓜 2 根", "鸡蛋 3 个", "大蒜 3~4 瓣", "小米辣 2~3 个（可选）",
+      "清水 半锅", "食盐 1 勺", "色拉油 1 勺", "食用油 适量（宽油）",
+      "鸡精 半勺", "生抽 小半勺"
+    ]
+  }
+];
+
+const PAGE_SIZE = 10;          // 每页菜数
+let mode = "all";              // "all" = 全部匹配(AND) | "any" = 任一匹配(OR)
+let page = 1;
+
+const $q = document.getElementById("q");
+const $list = document.getElementById("list");
+const $empty = document.getElementById("empty");
+const $pager = document.getElementById("pager");
+const $pageInfo = document.getElementById("pageInfo");
+
+function keywords() {
+  return $q.value.trim().split(/\s+/).filter(Boolean);
+}
+
+function escHtml(s) {
+  return s.replace(/[&<>"]/g, c => (
+    { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+function highlight(text, kws) {
+  let html = escHtml(text);
+  kws.forEach(kw => {
+    const esc = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    html = html.replace(new RegExp(esc, "g"), m => "<mark>" + m + "</mark>");
+  });
+  return html;
+}
+
+function match(recipe, kws) {
+  if (kws.length === 0) return true;
+  const haystack = [recipe.title, recipe.subtitle, ...recipe.ingredients].join("\n");
+  const hits = kws.map(kw => haystack.includes(kw));
+  return mode === "all" ? hits.every(Boolean) : hits.some(Boolean);
+}
+
+function filtered() {
+  const kws = keywords();
+  return RECIPES.filter(r => match(r, kws));
+}
+
+function render() {
+  const kws = keywords();
+  const items = filtered();
+  const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+  if (page > totalPages) page = totalPages;
+
+  const slice = items.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+  $list.innerHTML = slice.map(r => {
+    const ings = r.ingredients.slice(0, 6).join("、") +
+                 (r.ingredients.length > 6 ? " …" : "");
+    return `<li><a href="${r.path}">
+      <span>
+        <span class="dish">${highlight(r.title, kws)}</span>
+        <span class="dish-sub">${highlight(r.subtitle, kws)}</span>
+        <div class="ings">配料：${highlight(ings, kws)}</div>
+      </span>
+      <span class="arrow">→</span>
+    </a></li>`;
+  }).join("");
+
+  $empty.style.display = items.length === 0 ? "" : "none";
+
+  // 分页按钮：首页/上一页/页码(带省略)/下一页/末页
+  const btn = (label, target, opts = {}) => {
+    const dis = opts.disabled ? " disabled" : "";
+    const cls = opts.active ? "pg-btn active" : "pg-btn";
+    return `<button type="button" class="${cls}"${dis} data-page="${target}">${label}</button>`;
+  };
+  let html = "";
+  if (totalPages > 1) {
+    html += btn("«", 1, { disabled: page === 1 });
+    html += btn("‹", page - 1, { disabled: page === 1 });
+    const want = [...new Set([1, totalPages, page, page - 1, page + 1])]
+      .filter(p => p >= 1 && p <= totalPages).sort((a, b) => a - b);
+    let prev = 0;
+    want.forEach(p => {
+      if (p - prev > 1) html += `<span class="pg-ellipsis">…</span>`;
+      html += btn(p, p, { active: p === page });
+      prev = p;
+    });
+    html += btn("›", page + 1, { disabled: page === totalPages });
+    html += btn("»", totalPages, { disabled: page === totalPages });
+  }
+  $pager.innerHTML = html;
+  $pager.querySelectorAll("button").forEach(b =>
+    b.addEventListener("click", () => { page = +b.dataset.page; render(); }));
+
+  $pageInfo.textContent = items.length === 0
+    ? ""
+    : `共 ${items.length} 道菜 · 第 ${page}/${totalPages} 页 · 每页 ${PAGE_SIZE} 道`;
+}
+
+// 事件绑定
+$q.addEventListener("input", () => { page = 1; render(); });
+document.getElementById("mode-all").addEventListener("click", () => setMode("all"));
+document.getElementById("mode-any").addEventListener("click", () => setMode("any"));
+
+function setMode(m) {
+  if (mode === m) return;
+  mode = m;
+  document.getElementById("mode-all").classList.toggle("active", m === "all");
+  document.getElementById("mode-any").classList.toggle("active", m === "any");
+  page = 1; render();
+}
+
+render();
+</script>
 </body>
 </html>
