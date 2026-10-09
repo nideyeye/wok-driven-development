@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>酸辣柠檬虾荞麦面 · 工程师菜谱卡片</title>
+<style>
+  :root {
+    --paper: #FBF8F2;
+    --ink: #2E2A24;
+    --ink-soft: #6E675C;
+    --line: #D8D0C2;
+    --line-strong: #A89E8C;
+    --accent: #C77B2F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px; background: #EDE7DB;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+                 sans-serif;
+    color: var(--ink);
+  }
+  .card {
+    max-width: 1180px; margin: 0 auto; background: var(--paper);
+    border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(60, 45, 20, .12);
+    padding: 28px 30px 20px;
+  }
+  .card-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px;
+    margin-bottom: 6px;
+  }
+  .title { font-size: 26px; font-weight: 800; margin: 0; letter-spacing: .5px; }
+  .subtitle { font-size: 15px; color: var(--ink-soft); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+  .chip {
+    background: #FFF; border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 12px; font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line-strong);
+                border-radius: 10px; background: #FFF; }
+  table.recipe { width: 100%; border-collapse: collapse;
+                  table-layout: auto; }
+  td.ing-cell {
+    padding: 10px 14px; font-size: 14.5px; border-bottom: 1px solid var(--line);
+    background: #FFF; vertical-align: middle; min-width: 150px;
+  }
+  td.fill-cell {
+    background: #FFF; border-bottom: 1px solid var(--line);
+    border-left: 1px dashed #EAE2D2; min-width: 8px;
+  }
+  tr.group-last td.ing-cell, tr.group-last td.brace-cell,
+  tr.group-last td.fill-cell { border-bottom: 2.5px solid var(--line-strong); }
+  tr.group-last:last-child td.ing-cell,
+  tr.group-last:last-child td.brace-cell,
+  tr.group-last:last-child td.fill-cell { border-bottom: 1px solid var(--line); }
+  td.brace-cell {
+    width: 26px; padding: 0; border-bottom: 1px solid var(--line);
+    background: #FFF; vertical-align: middle; text-align: center;
+  }
+  svg.brace { width: 18px; height: 100%; min-height: 30px; display: inline-block;
+               vertical-align: middle; }
+  svg.brace path { stroke: var(--accent, #C77B2F); stroke-width: 2.6;
+                    stroke-linecap: round; }
+  td.step-cell {
+    vertical-align: middle; text-align: center; padding: 8px 9px;
+    border-left: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink); min-width: 78px; max-width: 170px;
+  }
+  tr:last-child td.step-cell { border-bottom: none; }
+  tr:last-child td.ing-cell { border-bottom: none; }
+  tr:last-child td.brace-cell { border-bottom: none; }
+  tr:last-child td.fill-cell { border-bottom: none; }
+  .step-label {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    color: #FFF; background: var(--accent);
+    border-radius: 999px; padding: 2px 9px; margin-bottom: 6px;
+    letter-spacing: .5px;
+  }
+  .step-action { font-weight: 700; font-size: 13px; line-height: 1.45;
+                  word-break: break-word; }
+  .notes { margin-top: 14px; font-size: 13px; color: var(--ink-soft);
+            line-height: 1.6; }
+  .footer {
+    margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: 11.5px; color: var(--ink-soft); display: flex;
+    justify-content: space-between; flex-wrap: wrap; gap: 6px;
+  }
+  @media print {
+    body { background: #FFF; padding: 0; }
+    .card { box-shadow: none; border-radius: 0; border: none; max-width: none; }
+    .table-wrap { border: 1px solid #999; }
+    tr { page-break-inside: avoid; }
+  }
+  @media (max-width: 560px) {
+    body { padding: 16px 8px; }
+    .card { padding: 18px 14px 14px; }
+    .title { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head">
+    <h1 class="title">酸辣柠檬虾荞麦面</h1>
+    <span class="subtitle">Buckwheat Noodles with Lemon Chili Shrimp</span>
+  </div>
+  <div class="chips"><span class="chip">冷食 · 酸辣开胃</span><span class="chip">腌制 20 分钟</span></div>
+  <div class="table-wrap">
+    <table class="recipe">
+      <tbody>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#C77B2F"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">荞麦面 90 g</td><td class="step-cell" rowspan="2" style="background:#FDF3E7;--accent:#C77B2F"><div class="step-label">① 煮面</div><div class="step-action">沸水煮 5 分钟，点一次冷水再沸，捞出入冰水过凉沥干</div></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="step-cell" rowspan="14" style="background:#FBF0F0;--accent:#C05A6A"><div class="step-label">⑤ 拌面</div><div class="step-action">过凉的荞麦面与腌好的酸辣柠檬虾拌匀即可</div></td></tr>
+<tr class="group-last"><td class="ing-cell">冰水 1 盆</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#4E8A5A"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">鲜虾 适量</td><td class="fill-cell"></td><td class="step-cell" rowspan="1" style="background:#EFF6EF;--accent:#4E8A5A"><div class="step-label">② 处理虾</div><div class="step-action">去虾线，煮熟后剥壳留尾</div></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="8" style="--accent:#3E6FB0"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">洋葱（切末）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="step-cell" rowspan="8" style="background:#EEF3FB;--accent:#3E6FB0"><div class="step-label">③ 调酱汁</div><div class="step-action">洋葱末:青红椒:蒜末 = 3:1:0.5，加调料拌匀</div></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">青红椒（切碎）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">蒜（切末）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">柠檬 1 颗（一半切片、一半挤汁）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">生抽 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">蚝油 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">糖 半勺</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">白胡椒 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="3" style="--accent:#7C5CA8"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">熟虾仁（去壳留尾）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="step-cell" rowspan="3" style="background:#F7EFF7;--accent:#7C5CA8"><div class="step-label">④ 腌制</div><div class="step-action">与酱汁搅匀，腌制 20 分钟</div></td></tr>
+<tr><td class="ing-cell">黄瓜丝 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">小番茄（切半）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notes">📌 酱汁配比 洋葱末:青红椒:蒜末 = 3:1:0.5；柠檬一半切片、一半挤汁。喜酸可补半颗青柠汁。</div>
+  <div class="footer">
+    <span>⚙ 工程师菜谱格式 · 源自 Cooking for Engineers（Michael Chu，2004）</span>
+    <span>横向列 = 时间顺序（从左到右）；列高 = 该动作作用于哪些食材</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>咸蛋黄虾仁豆腐煲 · 工程师菜谱卡片</title>
+<style>
+  :root {
+    --paper: #FBF8F2;
+    --ink: #2E2A24;
+    --ink-soft: #6E675C;
+    --line: #D8D0C2;
+    --line-strong: #A89E8C;
+    --accent: #C77B2F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px; background: #EDE7DB;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+                 sans-serif;
+    color: var(--ink);
+  }
+  .card {
+    max-width: 1180px; margin: 0 auto; background: var(--paper);
+    border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(60, 45, 20, .12);
+    padding: 28px 30px 20px;
+  }
+  .card-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px;
+    margin-bottom: 6px;
+  }
+  .title { font-size: 26px; font-weight: 800; margin: 0; letter-spacing: .5px; }
+  .subtitle { font-size: 15px; color: var(--ink-soft); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+  .chip {
+    background: #FFF; border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 12px; font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line-strong);
+                border-radius: 10px; background: #FFF; }
+  table.recipe { width: 100%; border-collapse: collapse;
+                  table-layout: auto; }
+  td.ing-cell {
+    padding: 10px 14px; font-size: 14.5px; border-bottom: 1px solid var(--line);
+    background: #FFF; vertical-align: middle; min-width: 150px;
+  }
+  td.fill-cell {
+    background: #FFF; border-bottom: 1px solid var(--line);
+    border-left: 1px dashed #EAE2D2; min-width: 8px;
+  }
+  tr.group-last td.ing-cell, tr.group-last td.brace-cell,
+  tr.group-last td.fill-cell { border-bottom: 2.5px solid var(--line-strong); }
+  tr.group-last:last-child td.ing-cell,
+  tr.group-last:last-child td.brace-cell,
+  tr.group-last:last-child td.fill-cell { border-bottom: 1px solid var(--line); }
+  td.brace-cell {
+    width: 26px; padding: 0; border-bottom: 1px solid var(--line);
+    background: #FFF; vertical-align: middle; text-align: center;
+  }
+  svg.brace { width: 18px; height: 100%; min-height: 30px; display: inline-block;
+               vertical-align: middle; }
+  svg.brace path { stroke: var(--accent, #C77B2F); stroke-width: 2.6;
+                    stroke-linecap: round; }
+  td.step-cell {
+    vertical-align: middle; text-align: center; padding: 8px 9px;
+    border-left: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink); min-width: 78px; max-width: 170px;
+  }
+  tr:last-child td.step-cell { border-bottom: none; }
+  tr:last-child td.ing-cell { border-bottom: none; }
+  tr:last-child td.brace-cell { border-bottom: none; }
+  tr:last-child td.fill-cell { border-bottom: none; }
+  .step-label {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    color: #FFF; background: var(--accent);
+    border-radius: 999px; padding: 2px 9px; margin-bottom: 6px;
+    letter-spacing: .5px;
+  }
+  .step-action { font-weight: 700; font-size: 13px; line-height: 1.45;
+                  word-break: break-word; }
+  .notes { margin-top: 14px; font-size: 13px; color: var(--ink-soft);
+            line-height: 1.6; }
+  .footer {
+    margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: 11.5px; color: var(--ink-soft); display: flex;
+    justify-content: space-between; flex-wrap: wrap; gap: 6px;
+  }
+  @media print {
+    body { background: #FFF; padding: 0; }
+    .card { box-shadow: none; border-radius: 0; border: none; max-width: none; }
+    .table-wrap { border: 1px solid #999; }
+    tr { page-break-inside: avoid; }
+  }
+  @media (max-width: 560px) {
+    body { padding: 16px 8px; }
+    .card { padding: 18px 14px 14px; }
+    .title { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head">
+    <h1 class="title">咸蛋黄虾仁豆腐煲</h1>
+    <span class="subtitle">Salted Egg Yolk Shrimp &amp; Tofu Pot</span>
+  </div>
+  <div class="chips"><span class="chip">单人份（咸蛋黄 4 个）</span><span class="chip">备料 10 分钟</span><span class="chip">烹饪 10 分钟</span></div>
+  <div class="table-wrap">
+    <table class="recipe">
+      <tbody>
+<tr><td class="brace-cell" rowspan="5" style="--accent:#C77B2F"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">虾仁 适量（鲜虾或冻虾）</td><td class="step-cell" rowspan="5" style="background:#FDF3E7;--accent:#C77B2F"><div class="step-label">① 腌虾仁</div><div class="step-action">抓匀上浆，腌制（可省略）</div></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">蛋清 少许</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">淀粉 少许</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">白胡椒粉 少许</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">料酒 少许</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#4E8A5A"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">食用油 适量</td><td class="fill-cell"></td><td class="step-cell" rowspan="2" style="background:#EFF6EF;--accent:#4E8A5A"><div class="step-label">② 爆香</div><div class="step-action">热锅倒油，下葱白炒香</div></td><td class="step-cell" rowspan="3" style="background:#EEF3FB;--accent:#3E6FB0"><div class="step-label">③ 炒蛋黄</div><div class="step-action">下锅压碎，小火炒至冒泡</div></td><td class="step-cell" rowspan="4" style="background:#F7EFF7;--accent:#7C5CA8"><div class="step-label">④ 下虾仁</div><div class="step-action">翻炒至变色（怕腥可补少许料酒）</div></td><td class="step-cell" rowspan="6" style="background:#FBF0F0;--accent:#C05A6A"><div class="step-label">⑤ 下豆腐</div><div class="step-action">加入豆腐和热水，中火煮开</div></td><td class="step-cell" rowspan="8" style="background:#F0F7F7;--accent:#3E8F8F"><div class="step-label">⑥ 调味收汁</div><div class="step-action">大火收汁，按口味调味</div></td><td class="step-cell" rowspan="10" style="background:#F6F3EA;--accent:#9A8A4E"><div class="step-label">⑦ 勾芡撒葱</div><div class="step-action">水多则勾薄芡；关火后撒葱粒</div></td></tr>
+<tr class="group-last"><td class="ing-cell">葱白 少许（切粒）</td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#3E6FB0"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">咸蛋黄 4 个</td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#7C5CA8"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">虾仁（腌好的）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#C05A6A"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">豆腐 适量（卤水/石膏，切小块）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">热水 适量（基本没过食材）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#3E8F8F"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">盐 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">白胡椒粉 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#9A8A4E"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">水淀粉 适量（水多时才用）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">葱粒 少许</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notes">📌 冻虾可提前用油炒制增香；怕腥可去虾线，或炒制时补少许料酒；豆腐用卤水豆腐或石膏豆腐，勿用日本豆腐。若收汁后水量仍多，用水淀粉勾薄芡。</div>
+  <div class="footer">
+    <span>⚙ 工程师菜谱格式 · 源自 Cooking for Engineers（Michael Chu，2004）</span>
+    <span>横向列 = 时间顺序（从左到右）；列高 = 该动作作用于哪些食材</span>
+  </div>
+</div>
+</body>
+</html>

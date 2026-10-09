@@ -1,0 +1,14 @@
+{
+  "title": "三色鸡丝荞麦面",
+  "subtitle": "Tri-color Shredded Chicken Buckwheet Noodles",
+  "meta": ["凉拌 · 清爽低脂"],
+  "notes": "⑥ 淋汁作用于碗中组装好的面与三丝，故该列从 ③ 煮面组首行向下延伸。",
+  "steps": [
+    { "label": "① 煮鸡胸", "action": "大火煮 10 分钟，捞出放凉撕成条", "ingredients": ["鸡胸肉 1 块"] },
+    { "label": "② 摊蛋皮", "action": "打匀入锅煎成蛋皮，切成蛋丝", "ingredients": ["鸡蛋 1–2 个"] },
+    { "label": "③ 煮面", "action": "煮熟过凉，沥干平铺碗底", "ingredients": ["荞麦面 90 g"] },
+    { "label": "④ 摆盘", "action": "沿碗边码放三丝与鸡丝", "ingredients": ["黄瓜丝 适量", "胡萝卜丝 适量", "蛋丝", "鸡肉丝"] },
+    { "label": "⑤ 调酱汁", "action": "拌匀成酱汁", "ingredients": ["蒜末 适量", "小米椒 适量", "生抽 适量", "蚝油 适量", "醋 适量", "香油 适量", "芝麻 适量"] },
+    { "label": "⑥ 淋汁", "action": "酱汁淋上，撒香菜", "span_from": 2, "ingredients": ["香菜 少许"] }
+  ]
+}

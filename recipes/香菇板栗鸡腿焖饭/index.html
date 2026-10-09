@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>香菇板栗鸡腿焖饭 · 工程师菜谱卡片</title>
+<style>
+  :root {
+    --paper: #FBF8F2;
+    --ink: #2E2A24;
+    --ink-soft: #6E675C;
+    --line: #D8D0C2;
+    --line-strong: #A89E8C;
+    --accent: #C77B2F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px; background: #EDE7DB;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
+                 sans-serif;
+    color: var(--ink);
+  }
+  .card {
+    max-width: 1180px; margin: 0 auto; background: var(--paper);
+    border: 1px solid var(--line); border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(60, 45, 20, .12);
+    padding: 28px 30px 20px;
+  }
+  .card-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px;
+    margin-bottom: 6px;
+  }
+  .title { font-size: 26px; font-weight: 800; margin: 0; letter-spacing: .5px; }
+  .subtitle { font-size: 15px; color: var(--ink-soft); font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+  .chip {
+    background: #FFF; border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 12px; font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line-strong);
+                border-radius: 10px; background: #FFF; }
+  table.recipe { width: 100%; border-collapse: collapse;
+                  table-layout: auto; }
+  td.ing-cell {
+    padding: 10px 14px; font-size: 14.5px; border-bottom: 1px solid var(--line);
+    background: #FFF; vertical-align: middle; min-width: 150px;
+  }
+  td.fill-cell {
+    background: #FFF; border-bottom: 1px solid var(--line);
+    border-left: 1px dashed #EAE2D2; min-width: 8px;
+  }
+  tr.group-last td.ing-cell, tr.group-last td.brace-cell,
+  tr.group-last td.fill-cell { border-bottom: 2.5px solid var(--line-strong); }
+  tr.group-last:last-child td.ing-cell,
+  tr.group-last:last-child td.brace-cell,
+  tr.group-last:last-child td.fill-cell { border-bottom: 1px solid var(--line); }
+  td.brace-cell {
+    width: 26px; padding: 0; border-bottom: 1px solid var(--line);
+    background: #FFF; vertical-align: middle; text-align: center;
+  }
+  svg.brace { width: 18px; height: 100%; min-height: 30px; display: inline-block;
+               vertical-align: middle; }
+  svg.brace path { stroke: var(--accent, #C77B2F); stroke-width: 2.6;
+                    stroke-linecap: round; }
+  td.step-cell {
+    vertical-align: middle; text-align: center; padding: 8px 9px;
+    border-left: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    font-size: 12.5px; color: var(--ink); min-width: 78px; max-width: 170px;
+  }
+  tr:last-child td.step-cell { border-bottom: none; }
+  tr:last-child td.ing-cell { border-bottom: none; }
+  tr:last-child td.brace-cell { border-bottom: none; }
+  tr:last-child td.fill-cell { border-bottom: none; }
+  .step-label {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    color: #FFF; background: var(--accent);
+    border-radius: 999px; padding: 2px 9px; margin-bottom: 6px;
+    letter-spacing: .5px;
+  }
+  .step-action { font-weight: 700; font-size: 13px; line-height: 1.45;
+                  word-break: break-word; }
+  .notes { margin-top: 14px; font-size: 13px; color: var(--ink-soft);
+            line-height: 1.6; }
+  .footer {
+    margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line);
+    font-size: 11.5px; color: var(--ink-soft); display: flex;
+    justify-content: space-between; flex-wrap: wrap; gap: 6px;
+  }
+  @media print {
+    body { background: #FFF; padding: 0; }
+    .card { box-shadow: none; border-radius: 0; border: none; max-width: none; }
+    .table-wrap { border: 1px solid #999; }
+    tr { page-break-inside: avoid; }
+  }
+  @media (max-width: 560px) {
+    body { padding: 16px 8px; }
+    .card { padding: 18px 14px 14px; }
+    .title { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head">
+    <h1 class="title">香菇板栗鸡腿焖饭</h1>
+    
+  </div>
+  <div class="chips"><span class="chip">泡发 1 小时以上</span><span class="chip">腌制 20 分钟</span><span class="chip">焖煮约 1 小时</span></div>
+  <div class="table-wrap">
+    <table class="recipe">
+      <tbody>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#C77B2F"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">干香菇 50 g</td><td class="step-cell" rowspan="2" style="background:#FDF3E7;--accent:#C77B2F"><div class="step-label">① 泡香菇</div><div class="step-action">温水泡发 1 小时以上，挤干备用</div></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">温水 适量（浸没香菇）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="5" style="--accent:#4E8A5A"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">拆骨鸡腿排 400 g</td><td class="fill-cell"></td><td class="step-cell" rowspan="5" style="background:#EFF6EF;--accent:#4E8A5A"><div class="step-label">② 腌鸡腿</div><div class="step-action">鸡腿排切 4×4 cm 块，抓匀腌制 20 分钟以上</div></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">胡椒粉 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">老酒 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">蒜末 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">姜末 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#3E6FB0"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">大米 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="step-cell" rowspan="1" style="background:#EEF3FB;--accent:#3E6FB0"><div class="step-label">③ 泡米</div><div class="step-action">加水浸泡</div></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="3" style="--accent:#7C5CA8"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">蜂蜜 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="step-cell" rowspan="3" style="background:#F7EFF7;--accent:#7C5CA8"><div class="step-label">④ 调料汁</div><div class="step-action">勾兑成料汁，按 2/3 与 1/3 分成两份</div></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">酱油 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">蚝油 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#C05A6A"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">泡好的大米（沥干）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="step-cell" rowspan="1" style="background:#FBF0F0;--accent:#C05A6A"><div class="step-label">⑤ 装锅</div><div class="step-action">沥去泡米水，大米平铺锅底</div></td><td class="step-cell" rowspan="4" style="background:#F0F7F7;--accent:#3E8F8F"><div class="step-label">⑥ 分层铺料</div><div class="step-action">依次铺上板栗、香菇、鸡腿块</div></td><td class="step-cell" rowspan="5" style="background:#F6F3EA;--accent:#9A8A4E"><div class="step-label">⑦ 加水</div><div class="step-action">加至刚没过米饭即可（不需没过其他食材）</div></td><td class="step-cell" rowspan="6" style="background:#FDF3E7;--accent:#C77B2F"><div class="step-label">⑧ 淋汁焖煮</div><div class="step-action">均匀淋在食材上，盖盖焖煮</div></td><td class="step-cell" rowspan="8" style="background:#EFF6EF;--accent:#4E8A5A"><div class="step-label">⑨ 40 分钟加蛋</div><div class="step-action">开盖打入鸡蛋、淋入剩余料汁，继续焖煮约 20 分钟</div></td><td class="step-cell" rowspan="9" style="background:#EEF3FB;--accent:#3E6FB0"><div class="step-label">⑩ 出锅</div><div class="step-action">关火撒入香葱末，拌匀即可出锅</div></td></tr>
+<tr><td class="brace-cell" rowspan="3" style="--accent:#3E8F8F"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">板栗 50 g</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="ing-cell">泡发香菇（挤干）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">腌好的鸡腿块</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#9A8A4E"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">清水 适量</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#C77B2F"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">料汁 2/3</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr><td class="brace-cell" rowspan="2" style="--accent:#4E8A5A"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">鸡蛋 1 个</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="ing-cell">料汁 1/3</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+<tr class="group-last"><td class="brace-cell" rowspan="1" style="--accent:#3E6FB0"><svg class="brace" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 10 2 Q 3 2 3 13 L 3 40 Q 3 50 9.5 50 Q 3 50 3 60 L 3 87 Q 3 98 10 98" vector-effect="non-scaling-stroke" fill="none"/></svg></td><td class="ing-cell">香葱 10 g（切末）</td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td><td class="fill-cell"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="notes">📌 料汁分两次淋入：2/3 在装锅后、1/3 在 40 分钟开盖加蛋时。加水以刚没过米饭为准，不需没过其他食材。</div>
+  <div class="footer">
+    <span>⚙ 工程师菜谱格式 · 源自 Cooking for Engineers（Michael Chu，2004）</span>
+    <span>横向列 = 时间顺序（从左到右）；列高 = 该动作作用于哪些食材</span>
+  </div>
+</div>
+</body>
+</html>
