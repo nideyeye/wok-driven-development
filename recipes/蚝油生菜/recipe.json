@@ -1,0 +1,36 @@
+{
+  "title": "蚝油生菜",
+  "subtitle": "Lettuce with Oyster Sauce",
+  "meta": ["快手素菜 · 一锅到底"],
+  "notes": "“泄开”＝用酱油和糖把稠蚝油化开调匀，避免直接干烧结块；拌生菜前务必关火，余温拌匀即可，久煮会出水变黄。",
+  "steps": [
+    {
+      "label": "① 焯水",
+      "action": "沸水焯软，捞出沥干",
+      "ingredients": ["生菜"]
+    },
+    {
+      "label": "② 爆香",
+      "action": "小火爆香",
+      "ingredients": ["食用油 适量", "蒜蓉"]
+    },
+    {
+      "label": "③ 加蚝油",
+      "action": "加入蚝油",
+      "span_from": 1,
+      "ingredients": ["蚝油 大量"]
+    },
+    {
+      "label": "④ 泄开",
+      "action": "加糖和酱油，把蚝油泄开",
+      "span_from": 1,
+      "ingredients": ["白糖 少许", "酱油 少许"]
+    },
+    {
+      "label": "⑤ 拌匀",
+      "action": "关火，倒入生菜拌匀",
+      "span_from": 1,
+      "ingredients": ["生菜（焯过，沥干）"]
+    }
+  ]
+}

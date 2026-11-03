@@ -65,6 +65,20 @@ const RECIPES = [
     ]
   },
   {
+    "path": "recipes/蚝油生菜/",
+    "title": "蚝油生菜",
+    "subtitle": "Lettuce with Oyster Sauce",
+    "ingredients": [
+      "生菜",
+      "食用油 适量",
+      "蒜蓉",
+      "蚝油 大量",
+      "白糖 少许",
+      "酱油 少许",
+      "生菜（焯过，沥干）"
+    ]
+  },
+  {
     "path": "recipes/黄焖鸡腿荞麦面/",
     "title": "黄焖鸡腿荞麦面",
     "subtitle": "Braised Chicken Thigh Buckwheat Noodles",
