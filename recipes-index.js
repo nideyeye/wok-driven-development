@@ -65,6 +65,30 @@ const RECIPES = [
     ]
   },
   {
+    "path": "recipes/罐焖牛肉/",
+    "title": "罐焖牛肉",
+    "subtitle": "Pot-braised Beef · 北京饭店家常还原版（压力锅）",
+    "ingredients": [
+      "牛肋条（切 3–4 cm 块）",
+      "大葱（切段）",
+      "姜（不去皮，切片）",
+      "芹菜",
+      "洋葱",
+      "胡萝卜",
+      "香叶",
+      "八角",
+      "盐 3 g",
+      "清水（没过肉面）",
+      "西红柿",
+      "黄油",
+      "番茄酱",
+      "土豆（切块）",
+      "白糖",
+      "盐（尝后补）",
+      "香菜 1 根"
+    ]
+  },
+  {
     "path": "recipes/蚝油生菜/",
     "title": "蚝油生菜",
     "subtitle": "Lettuce with Oyster Sauce",
